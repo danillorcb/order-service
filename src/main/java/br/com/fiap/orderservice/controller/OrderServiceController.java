@@ -6,9 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -23,6 +21,13 @@ public class OrderServiceController {
 
         Order order = repository.get(idPedido);
         System.out.println(order);
+
+        return new ResponseEntity<>(order, HttpStatus.OK);
+    }
+
+    @PostMapping("/exercicio-1/save")
+    public ResponseEntity<Order> post(@RequestBody Order order) {
+        repository.add(order);
 
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
