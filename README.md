@@ -11,8 +11,8 @@
 {
     "idPedido": 2,
     "email": "email@teste.com",
-    "nomeCompleto": "Nome do Comprador Número 1",
-    "shippingAddress": "Av. Lins de Vasconcelos 1222 - Predio II",
+    "nomeCompleto": "Nome do Comprador Número 2",
+    "shippingAddress": "Av. Lins de Vasconcelos, 1222",
     "itens": [
         {
             "idItem": 1,
@@ -25,21 +25,15 @@
             "descricaoItemPedido": "Smartphone SAMSUNG",
             "quantidadeItensPedido": "3",
             "precoUnitItem": "1000"
-        },
-        {
-            "idItem": 3,
-            "descricaoItemPedido": "SmartTV",
-            "quantidadeItensPedido": "1",
-            "precoUnitItem": "3000"
         }
     ],
-    "precoTotalPagamento": "10000",
+    "precoTotalPagamento": "7000",
     "formaPagamento": "A Vista",
     "dataPedido": "25/03/2019",
-    "statusPedido": "Aprovado",
+    "statusPedido": "Pendente",
     "transacao": {
         "idTransacao": 1,
-        "numeroCartao": "1234-1234-1234-1234",
+        "numeroCartao": "1111-2222-3333-4444",
         "validadeCartao": "12/2020",
         "bandeira": "VISA"
     }
