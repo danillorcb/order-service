@@ -106,4 +106,8 @@ public class OrderRepository {
 
         });
     }
+
+    public OrderDTO delete(Long idPedido) {
+        return orders.remove(idPedido);
+    }
 }

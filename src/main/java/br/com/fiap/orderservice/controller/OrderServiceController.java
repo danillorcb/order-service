@@ -28,7 +28,8 @@ public class OrderServiceController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<Object> post(@RequestBody OrderDTO order) {
+    public ResponseEntity<Object> post(
+            @RequestBody OrderDTO order) {
         repository.add(order);
 
         URI location = ServletUriComponentsBuilder
@@ -38,8 +39,8 @@ public class OrderServiceController {
         return ResponseEntity.created(location).build();
     }
 
-    @PutMapping("/{idPedido}")
-    public ResponseEntity<String> put(
+    @PatchMapping("/{idPedido}")
+    public ResponseEntity<String> patch(
             @PathVariable(value="idPedido", required=true) Long idPedido,
             @RequestBody OrderDTO order
     ) {
@@ -49,5 +50,13 @@ public class OrderServiceController {
                 .fromCurrentRequest()
                 .buildAndExpand(idPedido).toUri();
         return ResponseEntity.created(location).build();
+    }
+
+    @DeleteMapping("/{idPedido}")
+    public ResponseEntity<?> delete(
+            @PathVariable(value="idPedido", required=true) Long idPedido) {
+        repository.delete(idPedido);
+
+        return new ResponseEntity<>("Pedido excluído com sucesso!", HttpStatus.OK);
     }
 }
