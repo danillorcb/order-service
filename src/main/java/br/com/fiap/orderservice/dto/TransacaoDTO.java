@@ -8,8 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransacaoDTO {
-    public Long idTransacao;
-    public String numeroCartao;
-    public String validadeCartao;
-    public String bandeira;
+    private Long idTransacao;
+    private String numeroCartao;
+    private String validadeCartao;
+    private String bandeira;
 }

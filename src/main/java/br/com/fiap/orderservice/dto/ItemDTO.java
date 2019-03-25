@@ -8,7 +8,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemDTO {
-    public String descricaoItemPedido;
-    public String quantidadeItensPedido;
-    public String precoUnitItem;
+    private Long idItem;
+    private String descricaoItemPedido;
+    private String quantidadeItensPedido;
+    private String precoUnitItem;
 }

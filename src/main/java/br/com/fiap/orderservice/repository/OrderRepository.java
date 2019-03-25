@@ -10,8 +10,6 @@ import java.util.*;
 @Repository
 public class OrderRepository {
 
-    private OrderDTO orderUpdated;
-
     private static Map<Long, OrderDTO> orders = new HashMap<>();
     static {
         orders.put(1l, new OrderDTO(
@@ -22,11 +20,13 @@ public class OrderRepository {
                  new ArrayList<ItemDTO> (
                         Arrays.asList(
                                 new ItemDTO(
+                                        1l,
                                         "Notebook",
                                         "2",
                                         "2000"
                                 ),
                                 new ItemDTO(
+                                        2l,
                                         "Smartphone",
                                         "1",
                                         "1000"
@@ -55,18 +55,55 @@ public class OrderRepository {
     }
     
     public void update(Long idPedido, OrderDTO order) {
-        orderUpdated = orders.get(idPedido);
+        OrderDTO orderUpdated = orders.get(idPedido);
 
-        if (!order.getShippingAddress().isEmpty())
+        //Campos da Order
+        if (order.getShippingAddress() != null)
             orderUpdated.setShippingAddress(order.getShippingAddress());
 
+        if (order.getPrecoTotalPagamento() != null)
+            orderUpdated.setPrecoTotalPagamento(order.getPrecoTotalPagamento());
+
+        if (order.getFormaPagamento() != null)
+            orderUpdated.setFormaPagamento(order.getFormaPagamento());
+
+        if (order.getShippingAddress() != null)
+            orderUpdated.setDataPedido(order.getDataPedido());
+
+        //Itens
         order.getItens().forEach( item -> {
-           this.validatorAndSetter(item);
+            this.itemValidatorAndSetter(orderUpdated, item);
         });
+
+        //Campos da Transação
+        if (order.getTransacao().getIdTransacao() != null)
+            orderUpdated.getTransacao().setIdTransacao(order.getTransacao().getIdTransacao());
+
+        if (order.getTransacao().getNumeroCartao() != null)
+            orderUpdated.getTransacao().setNumeroCartao(order.getTransacao().getNumeroCartao());
+
+        if (order.getTransacao().getValidadeCartao() != null)
+            orderUpdated.getTransacao().setValidadeCartao(order.getTransacao().getValidadeCartao());
+
+        if (order.getTransacao().getBandeira() != null)
+            orderUpdated.getTransacao().setBandeira(order.getTransacao().getBandeira());
     }
 
-    private void validatorAndSetter(ItemDTO item){
-        if (!item.descricaoItemPedido.isEmpty())
-            orderUpdated.getItens();
+    private void itemValidatorAndSetter(OrderDTO orderUpdated, ItemDTO item){
+        orderUpdated.getItens().forEach(itemUpdated -> {
+
+            if (itemUpdated.getIdItem().equals(item.getIdItem())) {
+
+                if (item.getDescricaoItemPedido() != null)
+                    itemUpdated.setDescricaoItemPedido(item.getDescricaoItemPedido());
+
+                if (item.getPrecoUnitItem() != null)
+                    itemUpdated.setPrecoUnitItem(item.getPrecoUnitItem());
+
+                if (item.getQuantidadeItensPedido() != null)
+                    itemUpdated.setQuantidadeItensPedido(item.getQuantidadeItensPedido());
+            }
+
+        });
     }
 }

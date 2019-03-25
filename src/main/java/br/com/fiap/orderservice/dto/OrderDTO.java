@@ -10,14 +10,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderDTO {
-    public Long idPedido;
-    public String email;
-    public String nomeCompleto;
-    public String shippingAddress;
-    public List<ItemDTO> itens;
-    public String precoTotalPagamento;
-    public String formaPagamento;
-    public String dataPedido;
-    public String statusPedido;
-    public TransacaoDTO transacao;
+    private Long idPedido;
+    private String email;
+    private String nomeCompleto;
+    private String shippingAddress;
+    private List<ItemDTO> itens;
+    private String precoTotalPagamento;
+    private String formaPagamento;
+    private String dataPedido;
+    private String statusPedido;
+    private TransacaoDTO transacao;
 }
