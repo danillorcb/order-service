@@ -1,11 +1,11 @@
 # Microserviço: order-service
 
 ### Method: GET
-* **Endpoint:** http://host/order-service/{idPedido}
+* *Endpoint:* http://host/order-service/{idPedido}
 
 ### Method: POST
-* **Endpoint:** http://host/order-service/
-* **Payload:** 
+* *Endpoint:* http://host/order-service/
+* *Payload:* 
 ```json5
 {
     "idPedido": 2,
@@ -38,12 +38,12 @@
     }
 }
 ```
-* **Response:** http://host/order-service/{idPedido}
+* *Response:* http://host/order-service/{idPedido}
 
 ### Method: PATCH
-* **Endpoint:** http://host/order-service/{idPedido}
+* *Endpoint:* http://host/order-service/{idPedido}
 
-* **Payload:** 
+* *Payload:* 
 ```json5
 {
     "idPedido": 2,
@@ -73,8 +73,8 @@
     }
 }
 ```
-* **Response:** http://host/order-service/{idPedido}
+* *Response:* http://host/order-service/{idPedido}
 
 ### Method: DELETE
-* **Endpoint:** http://host/order-service/{idPedido}
+* *Endpoint:* http://host/order-service/{idPedido}
 
