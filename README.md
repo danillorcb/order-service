@@ -6,7 +6,7 @@
 ### Method: POST
 * **Endpoint:** http://host/order-service/
 * **Payload:** 
-```json
+```json5
 {
     "idPedido": 2,
     "email": "email@teste.com",
