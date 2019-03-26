@@ -46,7 +46,6 @@
 * *Payload:* 
 ```json5
 {
-    "idPedido": 2,
     "shippingAddress": "Av. Lins de Vasconcelos, 1222 - Lins II",
     "itens": [
         {
