@@ -15,24 +15,24 @@
     "itens": [
         {
             "idItem": 1,
-            "descricaoItemPedido": "Notebook DELL",
-            "quantidadeItensPedido": "2",
-            "precoUnitItem": "2000"
+            "descricaoItemPedido": "Notebook",
+            "quantidadeItensPedido": 2,
+            "precoUnitItem": 2000.00
         },
         {
             "idItem": 2,
-            "descricaoItemPedido": "Smartphone SAMSUNG",
-            "quantidadeItensPedido": "3",
-            "precoUnitItem": "1000"
+            "descricaoItemPedido": "Smartphone",
+            "quantidadeItensPedido": 1,
+            "precoUnitItem": 1000.00
         }
     ],
-    "precoTotalPagamento": "7000",
+    "precoTotalPagamento": 5000.00,
     "formaPagamento": "A Vista",
-    "dataPedido": "25/03/2019",
+    "dataPedido": "03/23/2019",
     "statusPedido": "Pendente",
     "transacao": {
         "idTransacao": 1,
-        "numeroCartao": "1111-2222-3333-4444",
+        "numeroCartao": "1234-1234-1234-1234",
         "validadeCartao": "12/2020",
         "bandeira": "VISA"
     }
@@ -52,24 +52,24 @@
         {
             "idItem": 1,
             "descricaoItemPedido": "Notebook DELL",
-            "quantidadeItensPedido": "3",
-            "precoUnitItem": "2000"
+            "quantidadeItensPedido": 2,
+            "precoUnitItem": 2000.00
         },
         {
             "idItem": 2,
             "descricaoItemPedido": "Smartphone SAMSUNG",
-            "quantidadeItensPedido": "3",
-            "precoUnitItem": "1000"
+            "quantidadeItensPedido": 2,
+            "precoUnitItem": 1000.00
         }
     ],
-    "precoTotalPagamento": "9000",
+    "precoTotalPagamento": 6000.00,
     "formaPagamento": "A Vista",
-    "dataPedido": "25/03/2019",
+    "dataPedido": "03/23/2019",
     "transacao": {
         "idTransacao": 1,
         "numeroCartao": "1111-2222-3333-4444",
-        "validadeCartao": "12/2020",
-        "bandeira": "VISA"
+        "validadeCartao": "03/2025",
+        "bandeira": "Mastercard"
     }
 }
 ```
