@@ -17,24 +17,22 @@ import java.net.URI;
 public class OrderServiceController {
 
     @Autowired
-    OrderRepository repository;
+    private OrderRepository repository;
 
     @GetMapping("/{idPedido}")
     public ResponseEntity<OrderDTO> findById(
-            @PathVariable(value="idPedido", required=true) Long idPedido) {
-
+            @PathVariable(value="idPedido", required = true) Long idPedido) {
         OrderDTO order = repository.get(idPedido);
         return new ResponseEntity<>(order, HttpStatus.OK);
     }
 
     @PostMapping("/")
-    public ResponseEntity<Object> post(
-            @RequestBody OrderDTO order) {
+    public ResponseEntity<Object> post(@RequestBody OrderDTO order) {
         repository.add(order);
 
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
-                .path("/{id}")
+                .path("/{idPedido}")
                 .buildAndExpand(order.getIdPedido()).toUri();
         return ResponseEntity.created(location).build();
     }

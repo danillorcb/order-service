@@ -2,6 +2,8 @@ package br.com.fiap.orderservice.dto;
 
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @EqualsAndHashCode
@@ -10,6 +12,6 @@ import lombok.*;
 public class ItemDTO {
     private Long idItem;
     private String descricaoItemPedido;
-    private String quantidadeItensPedido;
-    private String precoUnitItem;
+    private Integer quantidadeItensPedido;
+    private BigDecimal precoUnitItem;
 }

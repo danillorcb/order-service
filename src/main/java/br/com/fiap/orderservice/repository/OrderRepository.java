@@ -5,6 +5,7 @@ import br.com.fiap.orderservice.dto.OrderDTO;
 import br.com.fiap.orderservice.dto.TransacaoDTO;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 @Repository
@@ -22,20 +23,20 @@ public class OrderRepository {
                                 new ItemDTO(
                                         1l,
                                         "Notebook",
-                                        "2",
-                                        "2000"
+                                        2,
+                                         new BigDecimal(2000.00)
                                 ),
                                 new ItemDTO(
                                         2l,
                                         "Smartphone",
-                                        "1",
-                                        "1000"
+                                        1,
+                                         new BigDecimal(1000.00)
                                 )
                         )
                  ),
-                "5000",
+                 new BigDecimal(5000.00),
                 "A Vista",
-                "23/03/2019",
+                "03/23/2019",
                 "Aprovado",
                  new TransacaoDTO(
                         1l,
