@@ -20,30 +20,15 @@ public class OrderRepository {
                 "Av. Lins de Vasconcelos 1222",
                  new ArrayList<ItemDTO> (
                         Arrays.asList(
-                                new ItemDTO(
-                                        1l,
-                                        "Notebook",
-                                        2,
-                                         new BigDecimal(2000.00)
-                                ),
-                                new ItemDTO(
-                                        2l,
-                                        "Smartphone",
-                                        1,
-                                         new BigDecimal(1000.00)
-                                )
+                                new ItemDTO(1l, "Notebook", 2, new BigDecimal(2000.00)),
+                                new ItemDTO(2l, "Smartphone", 1, new BigDecimal(1000.00))
                         )
                  ),
                  new BigDecimal(5000.00),
                 "A Vista",
                 "03/23/2019",
                 "Aprovado",
-                 new TransacaoDTO(
-                        1l,
-                        "1234-1234-1234-1234",
-                        "12/2020",
-                        "VISA"
-                 )
+                 new TransacaoDTO(1l, "1234-1234-1234-1234", "12/2020", "VISA")
         ));
     }
 
