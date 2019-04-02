@@ -3,6 +3,7 @@ package br.com.fiap.orderservice.repository;
 import br.com.fiap.orderservice.dto.ItemDTO;
 import br.com.fiap.orderservice.dto.OrderDTO;
 import br.com.fiap.orderservice.dto.TransacaoDTO;
+import br.com.fiap.orderservice.exception.EntityNotFoundException;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
@@ -40,8 +41,12 @@ public class OrderRepository {
         orders.put(order.getIdPedido(), order);
     }
     
-    public void update(Long idPedido, OrderDTO order) {
+    public void update(Long idPedido, OrderDTO order) throws EntityNotFoundException {
         OrderDTO orderUpdated = orders.get(idPedido);
+        if (orderUpdated == null) {
+            String[] params = {"idPedido", idPedido.toString()};
+            throw new EntityNotFoundException(OrderDTO.class, params);
+        }
 
         //Campos da Order
         if (order.getShippingAddress() != null)
