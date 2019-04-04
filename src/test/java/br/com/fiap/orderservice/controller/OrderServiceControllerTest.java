@@ -80,29 +80,27 @@ public class OrderServiceControllerTest {
         OrderDTO orderDTO = new OrderDTO(
                 2l,
                 "email@teste.com",
-                "Nome do Comprador Número 1",
+                "Nome do Comprador Número 2",
                 "Av. Lins de Vasconcelos 1222",
                 new ArrayList<ItemDTO>(
                         Arrays.asList(
-                                new ItemDTO(1l, "Notebook", 2, new BigDecimal(2000.00)),
-                                new ItemDTO(2l, "Smartphone", 1, new BigDecimal(1000.00))
+                                new ItemDTO(1l, "Notebook DELL", 2, new BigDecimal(2000.00)),
+                                new ItemDTO(2l, "Smartphone SAMSUNG", 1, new BigDecimal(1000.00))
                         )
                 ),
                 new BigDecimal(5000.00),
                 "A Vista",
                 "03/23/2019",
                 "Aprovado",
-                new TransacaoDTO(2l, "1234-1234-1234-1234", "12/2020", "VISA")
+                new TransacaoDTO(2l, "1111-2222-3333-4444", "12/2020", "VISA")
         );
 
-        //Optional<OrderDTO> empty = Optional.empty();
-        when(this.repository.get(2l)).thenReturn(orderDTO); //Optional.empty()
         ObjectMapper mapper = new ObjectMapper();
         mapper.findAndRegisterModules();
         String jsonInString = mapper.writeValueAsString(orderDTO);
 
         mvc.perform(post("/order-service/")
-                .accept(MediaType.APPLICATION_JSON)
+                .contentType("application/json")
                 .content(jsonInString))
                 .andExpect(status().isCreated());
     }

@@ -77,3 +77,8 @@
 ### Method: DELETE
 * *Endpoint:* http://host/order-service/{idPedido}
 
+---
+
+## Testes JUnit e Mockito
+![alt text](https://github.com/danillorcb/order-service/tree/master/src/images/junit.PNG "Testes JUnit e Mockito")
+
